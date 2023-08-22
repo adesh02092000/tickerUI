@@ -1,4 +1,4 @@
-const stocks = ['AAPL', 'GOOGL', 'FB', 'AMZN', 'MSFT']
+const stocks = ['GOOGL', 'FB', 'AMZN', 'MSFT']
 
 export default function StockSelector({
   selectedStock,
