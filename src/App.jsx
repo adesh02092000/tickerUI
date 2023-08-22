@@ -15,7 +15,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => fetchPrice(selectedStock), 10 * 1000)
+    const interval = setInterval(() => fetchPrice(selectedStock), 60 * 1000)
 
     return () => clearInterval(interval)
   }, [selectedStock])
