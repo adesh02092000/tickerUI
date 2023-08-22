@@ -9,8 +9,8 @@ export default function StockSelector({
     <select
       value={selectedStock}
       onChange={e => {
-        fetchPrice()
         setSelectedStock(e.target.value)
+        fetchPrice(e.target.value)
       }}
     >
       {stocks.map(stock => (

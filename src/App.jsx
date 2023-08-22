@@ -7,7 +7,7 @@ export default function App() {
   const [selectedStock, setSelectedStock] = useState('AAPL')
   const [price, setPrice] = useState(Math.random() * 1000)
 
-  const fetchPrice = async () => {
+  const fetchPrice = async selectedStock => {
     const res = await fetch(`${VITE_API_URL}/api/price/${selectedStock}`)
 
     const data = await res.json()
@@ -15,7 +15,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    const interval = setInterval(fetchPrice, 10 * 1000)
+    const interval = setInterval(() => fetchPrice(selectedStock), 10 * 1000)
 
     return () => clearInterval(interval)
   }, [selectedStock])
